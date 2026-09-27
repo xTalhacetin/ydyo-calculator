@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akdeniz YDYO Grade Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <img src="akdenizlogo.jfif" alt="Akdeniz YDYO Logo" id="okulLogo">
+
+    <div class="container">
+        
+        <h1>🎓 Akdeniz University YDYO Grade Calculator</h1>
+
+        <!-- ANA MENÜ VE TÜRKÇE BİLGİLENDİRME -->
+        <div id="mainMenu" class="menu-box" style="max-width: 600px;">
+            
+            <div class="info-box" style="text-align: left; margin-bottom: 30px;">
+                <h3 style="text-align: center; color: #f1c40f; margin-bottom: 15px;">📖 Sistem Nasıl Çalışır?</h3>
+                <p><strong>1️⃣ Term Grade Calculation (Dönem Notu Hesaplama):</strong> Tek bir dönemin ortalamasını hesaplayın. Hesaplama yaptıktan sonra çıkan sonucu sistem hafızasında tutmak için <strong>"Save"</strong> butonlarını kullanın.</p>
+                <p><strong>2️⃣ Year-End (Yıl Sonu Final Boss):</strong> Tüm yılın geçme notunu hesaplayın. Eğer önceki adımda dönem notlarınızı kaydettiyseniz, buraya otomatik olarak aktarılacaktır!</p>
+                <p style="text-align: center; margin-top: 15px; color: #2ecc71;"><em>Geçme notu 60'tır. Başarılar!</em></p>
+            </div>
+
+            <h2>Select Calculation Type</h2>
+            <button onclick="showTerm()" class="menu-btn">📅 Term Grade Calculation</button>
+            <button onclick="showYear()" class="menu-btn boss-btn">💀 Year-End (Final Boss)</button>
+        </div>
+
+        <!-- 1. SİSTEM: DÖNEM NOTU HESAPLAMA -->
+        <div id="termCalc" class="hidden calc-section">
+            <button onclick="goBack()" class="back-btn">⬅ Back to Menu</button>
+            
+            <div class="info-box">
+                <h3>📌 Term Grading Criteria</h3>
+                <p>Passing Grade: <strong>60</strong></p>
+                <p>Pop Quiz (2.5%) | Quiz (5%) | Midterm (15%) | Sınıf İçi (10%) | Sunum (10%) | Online Ödev (10%) | Final (25%)</p>
+            </div>
+
+            <table id="gpaTable">
+                <tr><th>Assessments</th><th>Your Grade (0-100)</th></tr>
+                <tr><td>📝 1. Pop Quiz</td><td><input type="number" id="birpop" class="marks"></td></tr>
+                <tr><td>📝 2. Pop Quiz</td><td><input type="number" id="ikipop" class="marks"></td></tr>
+                <tr><td>📝 3. Pop Quiz</td><td><input type="number" id="ucpop" class="marks"></td></tr>
+                <tr><td>📝 4. Pop Quiz</td><td><input type="number" id="dortpop" class="marks"></td></tr>
+                <tr><td>📄 1. Quiz</td><td><input type="number" id="birquiz" class="marks"></td></tr>
+                <tr><td>📄 2. Quiz</td><td><input type="number" id="ikiquiz" class="marks"></td></tr>
+                <tr><td>📄 3. Quiz</td><td><input type="number" id="ucquiz" class="marks"></td></tr>
+                <tr><td>📄 4. Quiz</td><td><input type="number" id="dortquiz" class="marks"></td></tr>
+                <tr><td>🗿 Midterm</td><td><input type="number" id="mid" class="marks"></td></tr>
+                <tr><td>🙋‍♂️ Snf</td><td><input type="number" id="snf" class="marks"></td></tr>
+                <tr><td>📊 Snm</td><td><input type="number" id="snm" class="marks"></td></tr>
+                <tr><td>💻 Online</td><td><input type="number" id="onlineodv" class="marks"></td></tr>
+                <tr><td>💀 Final</td><td><input type="number" id="fnl" class="marks"></td></tr>
+            </table>
+
+            <div class="buttons">
+                <button onclick="hesapla()">💩 Calculate Average</button>
+            </div>
+            
+            <h2 id="result" class="result-box"></h2>
+
+            <div id="saveButtons" class="hidden">
+                <button onclick="saveAsTerm(1)" class="save-btn">💾 Save as Term 1 (bahar)</button>
+                <button onclick="saveAsTerm(2)" class="save-btn">💾 Save as Term 2 (güz)</button>
+            </div>
+
+            <div id="goToBossDiv" class="hidden" style="margin-bottom: 30px;">
+                <button onclick="jumpToBoss()" class="menu-btn boss-btn" style="padding: 12px 25px; font-size: 16px;">⚔️ Go to Final Boss</button>
+            </div>
+        </div>
+
+        <!-- 2. SİSTEM: YIL SONU HESAPLAMA -->
+        <div id="yearCalc" class="hidden calc-section">
+            <button onclick="goBack()" class="back-btn">⬅ Back to Menu</button>
+            
+            <div class="info-box">
+                <h3>📌 Year-End Grading Criteria</h3>
+                <p>Passing Grade: <strong>60</strong></p>
+                <p>Term 1 (25%) | Term 2 (35%) | Final Boss Exam (40%)</p>
+            </div>
+
+            <table id="gpaTable">
+                <tr><th>Assessments</th><th>Your Grade (0-100)</th></tr>
+                <tr><td>📅 Term 1 Average</td><td><input type="number" id="term1" class="marks"></td></tr>
+                <tr><td>📅 Term 2 Average</td><td><input type="number" id="term2" class="marks"></td></tr>
+                <tr><td>💀 Final Boss Exam</td><td><input type="number" id="finalBoss" class="marks"></td></tr>
+            </table>
+
+            <div class="buttons">
+                <button onclick="hesaplaYilSonu()">💩 Calculate Year-End</button>
+            </div>
+            <h2 id="year-result" class="result-box"></h2>
+        </div>
+        
+    </div> 
+<!-- DISQUS YORUM ALANI -->
+        <div class="disqus-container">
+            <div id="disqus_thread"></div>
+            <script>
+                (function() { 
+                var d = document, s = d.createElement('script');
+                s.src = 'https://akdeniz-ydyo-hesapla.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+        </div>
+        
+    </div> <!-- Container Sonu -->
+    </footer>
+<footer style="margin-top: auto; padding: 20px; text-align: center; color: white; font-size: 15px; letter-spacing: 0.5px;">
+        <p> <img src="https://flagcdn.com/w20/tr.png" alt="Turkish Flag" style="vertical-align: middle; margin-bottom: 2px; margin-right: 4px; border-radius: 2px;"> Developer: <strong>Muhammet Talha Çetin</strong> | Akdeniz University Computer Engineering Student</p>
+        <p style="font-size: 12px; color: #bdc3c7; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <em>Disclaimer: This is an unofficial tool created by a student to help with calculations. It is not affiliated with, endorsed by, or connected to the official Akdeniz University administration.</em>
+        </p>
+    </footer>
+    <script src="script.js"></script>
+<script id="dsq-count-scr" src="https://akdeniz-ydyo-hesapla.disqus.com/count.js" async></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

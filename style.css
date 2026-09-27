@@ -1,0 +1,272 @@
+/* --- GENEL SAYFA YAPISI --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); 
+    color: white; 
+    margin: 0;
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- SAĞ ÜST KÖŞE LOGOSU --- */
+#okulLogo {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    width: 130px; 
+    height: 130px;
+    clip-path: circle(41% at 50% 50%); 
+    z-index: 1000;
+}
+
+/* --- ANA BAŞLIK --- */
+h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+/* --- BİLGİ PANELİ --- */
+.info-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.info-box h3 { margin: 0 0 10px 0; font-size: 18px; color: #f1c40f; }
+.info-box p { margin: 5px 0; font-size: 14.5px; }
+
+/* --- MENÜ VE GİZLEME AYARLARI --- */
+.hidden {
+    display: none !important;
+}
+
+.calc-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.menu-btn {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: none;
+    padding: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+}
+
+.boss-btn {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+.boss-btn:hover {
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
+}
+
+.back-btn {
+    background: #7f8c8d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    align-self: flex-start;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #95a5a6;
+}
+
+/* --- TABLO TASARIMI --- */
+#gpaTable {
+    background: white;
+    color: #333; 
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    margin-bottom: 25px;
+}
+
+#gpaTable th {
+    background-color: #1a252f;
+    color: white;
+    padding: 18px;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+#gpaTable td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 500;
+}
+
+#gpaTable tr:last-child td { border-bottom: none; }
+
+/* --- NOT GİRİŞ KUTULARI --- */
+.marks {
+    width: 70px;
+    padding: 8px 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+    font-weight: bold;
+    color: #333;
+}
+
+.marks:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+}
+
+.marks::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* --- BUTON TASARIMI --- */
+.buttons button {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.6);
+}
+
+/* --- HAFIZAYA KAYDET BUTONLARI --- */
+#saveButtons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.save-btn {
+    background: #f39c12;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(243, 156, 18, 0.4);
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(230, 126, 34, 0.5);
+}
+
+/* --- SONUÇ YAZISI --- */
+.result-box {
+    background: white;
+    color: #333;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: inline-block;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.result-box:empty {
+    display: none;
+}
+
+/* --- GELİŞTİRİCİ İMZASI (FOOTER) --- */
+footer {
+    margin-top: auto; 
+    padding: 20px;
+    text-align: center;
+    color: white; 
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* --- MOBİL UYUM --- */
+@media (max-width: 600px) {
+    #okulLogo {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 10px auto 20px auto;
+        display: block;
+        width: 110px;
+        height: 110px;
+        clip-path: circle(39% at 50% 50%);
+    }
+}
+/* --- YORUM ALANI TASARIMI --- */
+.disqus-container {
+    width: 100%;
+    max-width: 750px;
+    background: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
