@@ -1,7 +1,10 @@
 /* --- GENEL SAYFA YAPISI --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); 
+    background: linear-gradient(to bottom, #512da8 0%, #000000 100%);
+    
+    
+
     color: white; 
     margin: 0;
     padding: 40px 10px;
@@ -54,7 +57,7 @@ h1 {
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-.info-box h3 { margin: 0 0 10px 0; font-size: 18px; color: #f1c40f; }
+.info-box h3 { margin: 0 0 10px 0; font-size: 18px; color: #ffec21; }
 .info-box p { margin: 5px 0; font-size: 14.5px; }
 
 /* --- MENÜ VE GİZLEME AYARLARI --- */
@@ -80,7 +83,7 @@ h1 {
 }
 
 .menu-btn {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    background: linear-gradient(135deg, #000000 0%, #01a517 74%);
     color: white;
     border: none;
     padding: 25px;
@@ -98,7 +101,7 @@ h1 {
 }
 
 .boss-btn {
-    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    background: linear-gradient(135deg, #000000 0%, #ff1b02 44%);
     box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
 }
 
@@ -167,8 +170,8 @@ h1 {
 }
 
 .marks:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+    border-color: pink;
+    box-shadow: 0 0 8px pink(52, 152, 219, 0.4);
 }
 
 .marks::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
@@ -201,8 +204,8 @@ h1 {
 }
 
 .save-btn {
-    background: #f39c12;
-    color: white;
+    background: white(171, 139, 139);
+    color: black;
     border: none;
     padding: 12px 20px;
     font-size: 16px;
@@ -214,14 +217,14 @@ h1 {
 }
 
 .save-btn:hover {
-    background: #e67e22;
+    background: whitesmoke;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(230, 126, 34, 0.5);
 }
 
 /* --- SONUÇ YAZISI --- */
 .result-box {
-    background: white;
+    background: #D32F2F;
     color: #333;
     padding: 15px 30px;
     border-radius: 10px;
