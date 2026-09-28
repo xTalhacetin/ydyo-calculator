@@ -131,7 +131,7 @@ function hesapla() {
 
     let tumNotlar = [p1, p2, p3, p4, q1, q2, q3, q4, mid, snf, snm, onl, fnl];
     if (!checkLimits(tumNotlar)) {
-        alert("⚠️ Hata: Girdiğiniz notlar 0 ile 100 arasında olmalıdır!");
+        alert("⚠️ Error: The grades you entered must be between 0 and 100!");
         return; 
     }
 
