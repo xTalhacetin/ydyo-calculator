@@ -91,13 +91,13 @@ h1 {
     font-weight: bold;
     border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    box-shadow: 0 5px 15px #14681f;
     transition: all 0.3s ease;
 }
 
 .menu-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+    box-shadow: 0 8px 20px #008312;
 }
 
 .boss-btn {
@@ -204,7 +204,7 @@ h1 {
 }
 
 .save-btn {
-    background: white(171, 139, 139);
+    background: whitesmoke;
     color: black;
     border: none;
     padding: 12px 20px;
@@ -212,19 +212,19 @@ h1 {
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(243, 156, 18, 0.4);
+    box-shadow: 0 4px 10px rgba(1, 9, 159, 0.4);
     transition: all 0.3s ease;
 }
 
 .save-btn:hover {
-    background: whitesmoke;
+    background: rgb(188, 187, 187);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(230, 126, 34, 0.5);
+    box-shadow: 0 6px 15px rgba(0, 232, 77, 0.5);
 }
 
 /* --- SONUÇ YAZISI --- */
 .result-box {
-    background: #D32F2F;
+    background: #ffffff;
     color: #333;
     padding: 15px 30px;
     border-radius: 10px;
@@ -233,6 +233,7 @@ h1 {
     font-size: 22px;
     margin-bottom: 30px;
 }
+
 
 .result-box:empty {
     display: none;
