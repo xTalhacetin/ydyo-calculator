@@ -1,9 +1,7 @@
-// --- GLOBAL HAFIZA (Sitenin Beyni) ---
 let lastCalculatedGrade = 0;
 let term1Saved = false;
 let term2Saved = false;
 
-// --- MENÜ GEÇİŞ FONKSİYONLARI ---
 function showTerm() {
     document.getElementById("mainMenu").classList.add("hidden");
     document.getElementById("termCalc").classList.remove("hidden");
@@ -32,7 +30,6 @@ function jumpToBoss() {
     document.getElementById("yearCalc").classList.remove("hidden");
 }
 
-// --- GÜVENLİK DUVARI (0-100 SINIRI) ---
 function checkLimits(notDizisi) {
     for (let i = 0; i < notDizisi.length; i++) {
         if (notDizisi[i] < 0 || notDizisi[i] > 100) {
@@ -42,7 +39,6 @@ function checkLimits(notDizisi) {
     return true;
 }
 
-// --- YENİ 1: DÖNEM FİNALİ İÇİN ANLIK GEREKSİNİM HESABI ---
 function calculateTermFinalReq() {
     let p1 = parseFloat(document.getElementById("birpop").value) || 0;
     let p2 = parseFloat(document.getElementById("ikipop").value) || 0;
@@ -67,7 +63,6 @@ function calculateTermFinalReq() {
 
     let reqBadge = document.getElementById("termFinalReq");
 
-    // Tüm değerler 0'sa yani öğrenci henüz hiçbir şeye basmadıysa yazıyı gizle
     if (currentPoints === 0) {
         reqBadge.innerHTML = "";
         return;
@@ -85,7 +80,6 @@ function calculateTermFinalReq() {
     }
 }
 
-// --- YENİ 2: FINAL BOSS İÇİN ANLIK GEREKSİNİM HESABI (35 Barajlı) ---
 function calculateBossFinalReq() {
     let t1 = parseFloat(document.getElementById("term1").value) || 0;
     let t2 = parseFloat(document.getElementById("term2").value) || 0;
@@ -101,7 +95,6 @@ function calculateBossFinalReq() {
     let neededPoints = 60 - currentPoints;
     let requiredBoss = neededPoints / 0.40;
     
-    // Baraj kuralı: İhtiyacı 10 puan bile olsa, sistem ona min 35 alman gerek der!
     let actualRequired = Math.max(35, requiredBoss);
 
     if (actualRequired > 100) {
@@ -113,7 +106,6 @@ function calculateBossFinalReq() {
     }
 }
 
-// --- 1. SİSTEM: DÖNEM NOTU HESAPLAMA ---
 function hesapla() {
     let p1 = parseFloat(document.getElementById("birpop").value) || 0;
     let p2 = parseFloat(document.getElementById("ikipop").value) || 0;
@@ -151,17 +143,16 @@ function hesapla() {
     document.getElementById("saveButtons").classList.remove("hidden");
 }
 
-// --- NOTU YIL SONU EKRANINA FIRLATAN KÖPRÜ ---
 function saveAsTerm(termId) {
     if (termId === 1) {
         document.getElementById("term1").value = lastCalculatedGrade.toFixed(2);
         term1Saved = true;
-        calculateBossFinalReq(); // Değer buraya gelince otomatik canlı hesabı tetikler
+        calculateBossFinalReq(); 
         alert("✅ Term 1 Grade Saved! It is ready for the Final Boss.");
     } else if (termId === 2) {
         document.getElementById("term2").value = lastCalculatedGrade.toFixed(2);
         term2Saved = true;
-        calculateBossFinalReq(); // Değer buraya gelince otomatik canlı hesabı tetikler
+        calculateBossFinalReq(); 
         alert("✅ Term 2 Grade Saved! It is ready for the Final Boss.");
     }
 
@@ -170,7 +161,6 @@ function saveAsTerm(termId) {
     }
 }
 
-// --- 2. SİSTEM: YIL SONU (FINAL BOSS) HESAPLAMA ---
 function hesaplaYilSonu() {
     let t1 = parseFloat(document.getElementById("term1").value) || 0;
     let t2 = parseFloat(document.getElementById("term2").value) || 0;
