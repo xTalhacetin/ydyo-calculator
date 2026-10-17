@@ -1,4 +1,3 @@
-/* --- GENEL SAYFA YAPISI --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(to bottom, #512da8 0%, #000000 100%);
@@ -22,7 +21,6 @@ body {
     align-items: center;
 }
 
-/* --- SAĞ ÜST KÖŞE LOGOSU --- */
 #okulLogo {
     position: absolute;
     top: 15px;
@@ -33,7 +31,6 @@ body {
     z-index: 1000;
 }
 
-/* --- ANA BAŞLIK --- */
 h1 {
     color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -42,7 +39,6 @@ h1 {
     text-align: center;
 }
 
-/* --- BİLGİ PANELİ --- */
 .info-box {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px); 
@@ -60,7 +56,6 @@ h1 {
 .info-box h3 { margin: 0 0 10px 0; font-size: 18px; color: #ffec21; }
 .info-box p { margin: 5px 0; font-size: 14.5px; }
 
-/* --- MENÜ VE GİZLEME AYARLARI --- */
 .hidden {
     display: none !important;
 }
@@ -126,7 +121,6 @@ h1 {
     background: #95a5a6;
 }
 
-/* --- TABLO TASARIMI --- */
 #gpaTable {
     background: white;
     color: #333; 
@@ -155,7 +149,6 @@ h1 {
 
 #gpaTable tr:last-child td { border-bottom: none; }
 
-/* --- NOT GİRİŞ KUTULARI --- */
 .marks {
     width: 70px;
     padding: 8px 10px;
@@ -176,7 +169,6 @@ h1 {
 
 .marks::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
-/* --- BUTON TASARIMI --- */
 .buttons button {
     background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
     color: white;
@@ -196,7 +188,6 @@ h1 {
     box-shadow: 0 8px 20px rgba(39, 174, 96, 0.6);
 }
 
-/* --- HAFIZAYA KAYDET BUTONLARI --- */
 #saveButtons {
     display: flex;
     gap: 15px;
@@ -222,7 +213,6 @@ h1 {
     box-shadow: 0 6px 15px rgba(0, 232, 77, 0.5);
 }
 
-/* --- SONUÇ YAZISI --- */
 .result-box {
     background: #ffffff;
     color: #333;
@@ -239,7 +229,6 @@ h1 {
     display: none;
 }
 
-/* --- GELİŞTİRİCİ İMZASI (FOOTER) --- */
 footer {
     margin-top: auto; 
     padding: 20px;
@@ -249,7 +238,6 @@ footer {
     letter-spacing: 0.5px;
 }
 
-/* --- MOBİL UYUM --- */
 @media (max-width: 600px) {
     #okulLogo {
         position: relative;
@@ -262,7 +250,6 @@ footer {
         clip-path: circle(39% at 50% 50%);
     }
 }
-/* --- YORUM ALANI TASARIMI --- */
 .disqus-container {
     width: 100%;
     max-width: 750px;
